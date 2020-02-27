@@ -1,5 +1,8 @@
 package com.saquib.model;
 
+import java.io.InputStream;
+import java.util.Base64;
+
 public class User {
 		private String userId;
 		private String password;
@@ -8,6 +11,41 @@ public class User {
 		private String address;
 		private String city;
 		
+		private byte[] photo;							//
+		private String base64Image;						// display img 
+		private InputStream inputStream;				// img file works on byte
+		
+		public byte[] getPhoto() {
+			return photo;
+		}
+		public void setPhoto(byte[] photo) {
+			this.photo = photo;
+		}
+		public String getBase64Image() {
+			this.base64Image = Base64.getEncoder().encodeToString(this.photo);
+			return base64Image;
+		}
+		public void setBase64Image(String base64Image) {
+			this.base64Image = base64Image;
+		}
+		public InputStream getInputStream() {
+			return inputStream;
+		}
+		public void setInputStream(InputStream inputStream) {
+			this.inputStream = inputStream;
+		}
+		
+		public User(String userId, String password, String firstName, String lastName, String address, String city,
+				InputStream inputStream) {
+			super();
+			this.userId = userId;
+			this.password = password;
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.address = address;
+			this.city = city;
+			this.inputStream = inputStream;
+		}
 		public User() {
 			
 		}

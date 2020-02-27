@@ -14,14 +14,14 @@
 	<link rel="stylesheet" name="text/css" href="css/styles.css">
 
 </head>
-<body style="background-color:red;">
+<body style="background-color:#e1f2fb;">
 
 
 
 <% response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");%>
 
 
-<div class="fluidcontainer">
+<div class="container">
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
       <a href="ItemController" class="navbar-brand">AS Saree</a>
@@ -60,12 +60,12 @@
     </div>
   </nav>
 </div>
-<div class="fluidcontainer">
-<header id="main-header" class="py-2 bg-warning text-white">
+<div class="container">
+<header id="main-header" class="py-2 bg-Danger link text-white">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-         <img src="Image/saquib.jpg" class="left" alt="Roxx" height="100" width="100" > <h1>Item Stock Management</h1>
+         <img src="Image/icon.png" class="rounded float-left" alt="Roxx" height="100" width="100" > <h1 align="center">Stock Management</h1>
         </div>
       </div>
     </div>
@@ -75,10 +75,12 @@
   
 <!-- <link rel="stylesheet" type="text/css" href="style.jsp/css"/>-->
 
-<div align="center">
+<div align="center" >
+${msg }
 <h1>Adding Items</h1>
 </head>
 <body>
+
 	<form action="itemController" method="post">
 	<input type="hidden" name="command" value="ADD"/>
 	<table>

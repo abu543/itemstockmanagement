@@ -14,7 +14,7 @@
 	<link rel="stylesheet" name="text/css" href="css/styles.css">
 
 </head>
-<body style="background-color:red;">
+<body style="background-color: #e1f2fb;">
 
 
 
@@ -24,14 +24,14 @@
 <div class="container">
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
-      <a href="ItemController" class="navbar-brand">AS Saree</a>
+      <a href="itemController" class="navbar-brand">AS Saree</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item px-2">
-            <a href="ItemController" class="nav-link active">Home</a>
+            <a href="itemController" class="nav-link active">Home</a>
           </li>
              
         </ul>
@@ -61,11 +61,11 @@
   </nav>
 </div>
 <div class="container">
-<header id="main-header" class="py-2 bg-warning text-white">
+<header id="main-header" class="py-2 bg-Danger link text-white">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-         <img src="Image/saquib.jpg" class="left" alt="Roxx" height="100" width="100" > <h1>Item Stock Management</h1>
+         <img src="Image/icon.png" class="rounded float-left" alt="Roxx" height="100" width="100" > <h1 align="center">Stock Management</h1>
         </div>
       </div>
     </div>
@@ -76,7 +76,7 @@
 <!-- <link rel="stylesheet" type="text/css" href="style.jsp/css"/>-->
 
 <div align="center">
-<h1>Update Items</h1>
+<h1>Update Item</h1>
 </head>
 <body>
 	<form action="itemController" method="post">

@@ -125,9 +125,9 @@ public class itemController extends HttpServlet {
 					
 		itemUtil.updateItem(item);   //Model ko date dega
 		
-		listItem(request,response); // list call
+		//listItem(request,response); // list call
 				
-		
+		response.sendRedirect("itemController?command=LIST");
 	}
 
 	private void loadItem(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -161,13 +161,25 @@ public class itemController extends HttpServlet {
 		Date doe = new Date();
 		doe = sdf.parse(dateOfExpiry);
 		
+		String message = null;
+		if(!doe.after(dom)) {
+			message = "Date of Expiry can't be less than Date of Manufacture";
+			request.setAttribute("msg", message);
+			RequestDispatcher rd = request.getRequestDispatcher("add-item-form.jsp");
+			rd.forward(request, response);
+		}
+		
+		else {
+		
 		Item item = new Item(itemName, unit, beginningInventory, quantityOnHand, pricePerUnit, dom, doe, location, category);
 		
 		itemUtil.addItem(item);  
 		
-		listItem(request,response);  //send back to main page(the item list)
+		//listItem(request,response);  //send back to main page(the item list)
+		
+		response.sendRedirect("itemController?command=LIST");  //doublicate  value nhi create krega in DB
 	}
-
+	}
 	private void listItem(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		List<Item> items = itemUtil.getItem();
 		request.setAttribute("item_list",items);
